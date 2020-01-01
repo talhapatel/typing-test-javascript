@@ -4,13 +4,16 @@ const quoteDisplayElement=document.getElementById('quoteDisplay')
 const quoteInputElement=document.getElementById('quoteInput')
 
 const timerElement=document.getElementById('timer')
+const wps=document.getElementById('wpm')
 quoteInputElement.addEventListener('input',()=>{
     const arrayQuate=quoteDisplayElement.querySelectorAll('span')
     const arrayValue=quoteInputElement.value.split('')
 
     let correct=true;
+    let totalcharacter=0;
     arrayQuate.forEach((characterSpan,index)=>{
         const character=arrayValue[index]
+        totalcharacter++;
         if(character==null){
             characterSpan.classList.remove('correct')
             characterSpan.classList.remove('incorrect')
@@ -28,7 +31,14 @@ quoteInputElement.addEventListener('input',()=>{
         }
     })
     if(correct){
-        getNextQuote()
+       const timer=timerElement.innerText
+       alert(Math.floor(((totalcharacter/5)/(timer/60))))
+      
+          
+            getNextQuote()
+            //wps=(total character/5)/min
+    
+      
     }
 
   

@@ -22,13 +22,15 @@ body,.quote-input{
     max-width: 90%;
 
 }
-.timer{
+.topbar{
     position: absolute;
     top:2rem;
     font-size: 3rem;
     color:yellow;
     font-weight: bold;
+    display: flex
 }
+
 .quote-display{
     margin-bottom: 1rem;
     margin-left:calc(1rem*2px);
